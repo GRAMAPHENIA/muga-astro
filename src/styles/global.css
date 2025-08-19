@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta MUGA */
+  --color-primary: #FF5353;
+  --color-primary-light: #FF8686;
+  --color-primary-dark: #CC4242;
+
+  --color-secondary: #302E2E;
+  --color-secondary-light: #4A4747;
+  --color-secondary-dark: #1F1C1C;
+
+  --color-dark: #191717;
+  --color-dark-alt: #2D1F1F;
+
+  --color-light: #D9D9D9;
+  --color-light-soft: #EDEDED;
+
+  --color-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: system-ui, sans-serif;
+  }
+}
