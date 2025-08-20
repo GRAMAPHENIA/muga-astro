@@ -82,3 +82,70 @@ Nuestro lema interno: "Construir con método, entregar con valor".
 - **Ser justo con el cliente**: cobramos por valor real entregado, no por complejidad innecesaria.
 - **Construir para durar**: diseño atemporal y componentes reutilizables que sostienen futuros desarrollos.
 - **Educación y transparencia**: explicamos decisiones de diseño y tecnología para que el cliente entienda el valor entregado.
+
+## 7. KPI de Contrato — AWNG
+
+Nuestros contratos incluyen garantías técnicas medibles que aseguran la calidad y el rendimiento de cada proyecto.
+
+### 1. Performance (Core Web Vitals)
+
+- **LCP (Largest Contentful Paint)**: ≤ 2.5s en el 95% de usuarios móviles (CrUX/field data).
+- **CLS (Cumulative Layout Shift)**: ≤ 0.1 (sin saltos de diseño).
+- **INP (Interaction to Next Paint)**: ≤ 200ms (respuesta fluida a la interacción).
+- **JS Budget inicial**: ≤ 70KB gzip por página (para evitar sobrecarga).
+
+✅ **Cómo se mide**: Google Lighthouse, PageSpeed Insights, CrUX Dashboard, WebPageTest.
+
+### 2. Indexación y SEO técnico
+
+- **Páginas indexadas**: ≥ 95% en Google Search Console dentro de los primeros 30 días post-lanzamiento.
+- **Sitemap y robots.txt** correctos (con integraciones de Astro).
+- **Metadatos completos**: títulos, descripciones, OpenGraph, schema.org.
+- **Jerarquía semántica válida**: uso correcto de H1-H6, landmarks HTML5.
+
+✅ **Cómo se mide**: Google Search Console, ScreamingFrog, Ahrefs/SEMrush.
+
+### 3. Accesibilidad (a11y)
+
+- **Score de accesibilidad**: ≥ 90 en Lighthouse.
+- **Cumplimiento WCAG AA**: contraste, navegación por teclado, alt en imágenes, foco visible.
+- **Pruebas de usuarios simulados**: validación con herramientas como axe o Playwright + axe-core.
+
+✅ **Cómo se mide**: Lighthouse, axe DevTools, manual con teclado.
+
+### 4. Disponibilidad y confiabilidad
+
+- **Uptime**: ≥ 99.9% en hosting gestionado (Vercel/Netlify/Cloudflare).
+- **Seguridad**:
+  - HTTPS por defecto.
+  - CSP configurado.
+  - HSTS activo.
+  - Headers de seguridad (X-Frame-Options, Referrer-Policy).
+- **Backups**: snapshots de contenido/DB automáticos (si aplica).
+
+✅ **Cómo se mide**: Better Uptime, Pingdom, observabilidad de logs.
+
+### 5. Mantenibilidad y escalabilidad
+
+- **CI/CD configurado**: todo deploy pasa por test de performance + accesibilidad.
+- **Componentes documentados**: design system con ≥ 80% de UI cubierta.
+- **Tests automatizados**: cobertura mínima 70% de componentes críticos.
+- **Escalabilidad progresiva**: capacidad de agregar Server Islands sin reescribir el sitio.
+
+✅ **Cómo se mide**: CI/CD logs, Storybook/Docs internos, cobertura en Vitest/Playwright.
+
+### Integración al Modelo de Negocio AWNG
+
+#### Propuesta de valor
+"Nuestros contratos incluyen garantías técnicas medibles (KPI de Performance, SEO, Accesibilidad y Confiabilidad) que otros estudios no ofrecen. No entregamos promesas vagas, entregamos métricas alcanzables."
+
+#### Relación con clientes
+"El cliente recibe un informe de KPIs post-lanzamiento (Core Web Vitals, indexación, accesibilidad) y monitoreo mensual si tiene plan de mantenimiento."
+
+#### Diferenciación competitiva
+- **Contra WordPress**: no se pueden garantizar Core Web Vitals con 20 plugins.
+- **Contra Next.js**: performance más consistente y mantenible sin sobreingeniería.
+- **Contra agencias estándar**: contrato basado en métricas, no en estética subjetiva.
+
+### Síntesis
+Estos KPI de contrato convierten a la Arquitectura Web de Nueva Generación en un servicio premium y confiable, alineado a métricas reales de negocio (SEO, velocidad, accesibilidad). Son, en sí mismos, una herramienta de ventas porque ponen un estándar técnico que la competencia no se anima a garantizar.

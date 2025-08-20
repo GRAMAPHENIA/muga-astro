@@ -1,10 +1,15 @@
 ---
+import HeroSection from "../components/HeroSection/HeroSection.astro";
+import BentoGrid from "../components/BentoGrid/BentoGrid.astro";
 import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/ui/Navigation/Navigation.astro";
 ---
 
 <Layout
   title="MUGA - Inicio"
   description="MUGA es una marca de productos de alta calidad para tu hogar"
 >
-  <h1 class="border border-white/10 border-dashed">MUGA</h1>
+<Navigation/>
+  <HeroSection />
+  <BentoGrid />
 </Layout>

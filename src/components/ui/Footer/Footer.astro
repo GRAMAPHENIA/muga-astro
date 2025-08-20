@@ -1,0 +1,28 @@
+---
+// Footer.astro - Componente de pie de página
+---
+
+<footer class="bg-muga-dark-800/50 py-8 mt-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex justify-center">
+      <a href="/modelo-negocio" class="text-white hover:text-muga-primary transition-colors flex items-center">
+        Modelo de Negocio
+        <span class="ml-2 arrow-icon">→</span>
+      </a>
+    </div>
+    <div class="mt-4 text-center text-sm text-muga-neutral">
+      <p>© {new Date().getFullYear()} MUGA. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  a:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+</style>
