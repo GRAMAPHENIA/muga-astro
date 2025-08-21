@@ -2,6 +2,7 @@
 import Layout from "../layouts/layout.astro";
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
 
 const breadcrumbItems = [
   {
@@ -15,16 +16,14 @@ const breadcrumbItems = [
 <Layout title="Nosotros | MUGA" description="Conoce más sobre MUGA, nuestra historia y valores">
   <Navigation />
   <Breadcrumb items={breadcrumbItems} />
-  <div >
+  <PageHeroSection 
+    title="Nosotros"
+    description="Conoce más sobre MUGA, nuestra historia y los valores que nos definen."
+    textAlign="left"
+  />
+  <div>
     <section class="py-12 sm:py-20">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Nosotros</h1>
-          <p class="mt-6 text-lg leading-8 text-gray-300">
-            Conoce más sobre MUGA, nuestra historia y los valores que nos definen.
-          </p>
-        </div>
-        
         <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <!-- Historia -->
           <div class="flex flex-col bg-gray-800/50 p-8 rounded-2xl">

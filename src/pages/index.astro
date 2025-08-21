@@ -1,5 +1,5 @@
 ---
-import HeroSection from "../components/HeroSection/HeroSection.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
 import BentoGrid from "../components/BentoGrid/BentoGrid.astro";
 
 import Navigation from "../components/ui/Navigation/Navigation.astro";
@@ -10,7 +10,17 @@ import Layout from "../layouts/layout.astro";
   title="MUGA - Inicio"
   description="MUGA es una marca de productos de alta calidad para tu hogar"
 >
-<Navigation/>
-  <HeroSection />
+  <Navigation/>
+  <PageHeroSection 
+    title="Arquitectura web de nueva generación"
+    description="Diseño web corporativo de nueva generación: rápido, escalable y elegante."
+    showBadge={true}
+    badgeText="Conocer"
+    badgeLink="#"
+    primaryButtonText="Comenzar"
+    primaryButtonLink="#"
+    secondaryButtonText="Saber más"
+    secondaryButtonLink="#"
+  />
   <BentoGrid />
 </Layout>

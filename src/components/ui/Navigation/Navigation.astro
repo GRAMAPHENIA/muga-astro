@@ -95,14 +95,13 @@ const currentPath = Astro.url.pathname;
   
   /* Añadir espacio para el header fijo */
   :global(body) {
-    padding-top: 112px; /* 72px (navbar) + 40px (breadcrumb) */
+    padding-top: 72px; /* 72px (navbar) + 40px (breadcrumb) */
   }
 
   /* Clase para el fondo al hacer scroll */
   .navbar-scrolled {
-    background-color: rgba(17, 24, 39, 0.95); /* bg-gray-900 con opacidad */
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: #191717; 
+    box-shadow: 0 4px 6px -1px #191717, 0 2px 4px -1px #191717;
   }
 </style>
 

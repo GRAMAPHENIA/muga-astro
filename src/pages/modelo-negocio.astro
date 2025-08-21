@@ -3,6 +3,7 @@ import ModeloNegocioBentoGrid from "../components/BentoGrid/ModeloNegocioBentoGr
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Layout from "../layouts/layout.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
 
 const breadcrumbItems = [
   {
@@ -19,26 +20,14 @@ const breadcrumbItems = [
 >
   <Navigation />
   <Breadcrumb items={breadcrumbItems} />
-
-  <div class="py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <h2 class="text-center text-base/7 font-semibold text-muga-primary">
-        Arquitectura Web
-      </h2>
-      <p
-        class="mx-auto mt-2 max-w-2xl text-center text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl"
-      >
-        Arquitectura Web de Nueva Generación
-      </p>
-      <p
-        class="mt-6 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8 max-w-3xl mx-auto text-center"
-      >
-        Nuestro enfoque: sitios web y aplicaciones modulares, rápidos y
-        escalables, basados en un sistema de diseño propio. Transparencia,
-        eficiencia y KPI medibles como estándar de calidad.
-      </p>
-    </div>
-  </div>
+  <PageHeroSection 
+    title="Arquitectura Web de Nueva Generación"
+    description="Nuestro enfoque: sitios web y aplicaciones modulares, rápidos y escalables, basados en un sistema de diseño propio. Transparencia, eficiencia y KPI medibles como estándar de calidad."
+    showBadge={true}
+    badgeText="Arquitectura Web"
+    badgeLink="#"
+    textAlign="left"
+  />
 
   <ModeloNegocioBentoGrid />
 

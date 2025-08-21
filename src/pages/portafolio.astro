@@ -2,6 +2,7 @@
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
 import Layout from "../layouts/layout.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
 
 const breadcrumbItems = [
   {
@@ -18,13 +19,13 @@ const breadcrumbItems = [
 >
   <Navigation />
   <Breadcrumb items={breadcrumbItems} />
-  <div >
+  <PageHeroSection 
+    title="Portafolio"
+    description="Descubre nuestros proyectos más destacados y casos de éxito."
+    textAlign="left"
+  />
+  <div>
     <div class="container mx-auto px-6 py-12">
-      <h1 class="text-4xl font-bold mb-8">Portafolio</h1>
-      <p class="text-xl mb-12">
-        Descubre nuestros proyectos más destacados y casos de éxito.
-      </p>
-
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Proyecto 1 -->
         <article

@@ -2,6 +2,7 @@
 import Layout from "../layouts/layout.astro";
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
 
 const breadcrumbItems = [
   {
@@ -15,79 +16,78 @@ const breadcrumbItems = [
 <Layout title="Características | MUGA" description="Conoce las características que hacen únicos a nuestros productos">
   <Navigation />
   <Breadcrumb items={breadcrumbItems} />
-  <div >
+  <PageHeroSection 
+    title="Características"
+    description="Descubre lo que hace especiales a nuestros productos y servicios."
+    textAlign="left"
+  />
+  <div>
     <section class="py-12 sm:py-20">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Características</h1>
-        <p class="mt-6 text-lg leading-8 text-gray-300">
-          Descubre lo que hace especiales a nuestros productos y servicios.
-        </p>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+            <!-- Característica 1 -->
+            <div class="flex flex-col">
+              <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                <div class="h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-600">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                  </svg>
+                </div>
+                Innovación Constante
+              </dt>
+              <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                <p class="flex-auto">
+                  Nuestros productos están en constante evolución, incorporando las últimas tecnologías y tendencias del mercado.
+                </p>
+                <p class="mt-6">
+                  <a href="#" class="text-sm font-semibold leading-6 text-indigo-400">Saber más <span aria-hidden="true">→</span></a>
+                </p>
+              </dd>
+            </div>
+            
+            <!-- Característica 2 -->
+            <div class="flex flex-col">
+              <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                <div class="h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-600">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                </div>
+                Seguridad Garantizada
+              </dt>
+              <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                <p class="flex-auto">
+                  La seguridad es nuestra prioridad. Todos nuestros productos cumplen con los más altos estándares de calidad y seguridad.
+                </p>
+                <p class="mt-6">
+                  <a href="#" class="text-sm font-semibold leading-6 text-indigo-400">Saber más <span aria-hidden="true">→</span></a>
+                </p>
+              </dd>
+            </div>
+            
+            <!-- Característica 3 -->
+            <div class="flex flex-col">
+              <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                <div class="h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-600">
+                  <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                Durabilidad Superior
+              </dt>
+              <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                <p class="flex-auto">
+                  Nuestros productos están diseñados para durar. Utilizamos materiales de la más alta calidad y procesos de fabricación rigurosos.
+                </p>
+                <p class="mt-6">
+                  <a href="#" class="text-sm font-semibold leading-6 text-indigo-400">Saber más <span aria-hidden="true">→</span></a>
+                </p>
+              </dd>
+            </div>
+          </dl>
+        </div>
       </div>
-      
-      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-          <!-- Característica 1 -->
-          <div class="flex flex-col">
-            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-              <div class="h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-600">
-                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
-                </svg>
-              </div>
-              Innovación Constante
-            </dt>
-            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
-              <p class="flex-auto">
-                Nuestros productos están en constante evolución, incorporando las últimas tecnologías y tendencias del mercado.
-              </p>
-              <p class="mt-6">
-                <a href="#" class="text-sm font-semibold leading-6 text-indigo-400">Saber más <span aria-hidden="true">→</span></a>
-              </p>
-            </dd>
-          </div>
-          
-          <!-- Característica 2 -->
-          <div class="flex flex-col">
-            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-              <div class="h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-600">
-                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                </svg>
-              </div>
-              Seguridad Garantizada
-            </dt>
-            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
-              <p class="flex-auto">
-                La seguridad es nuestra prioridad. Todos nuestros productos cumplen con los más altos estándares de calidad y seguridad.
-              </p>
-              <p class="mt-6">
-                <a href="#" class="text-sm font-semibold leading-6 text-indigo-400">Saber más <span aria-hidden="true">→</span></a>
-              </p>
-            </dd>
-          </div>
-          
-          <!-- Característica 3 -->
-          <div class="flex flex-col">
-            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-              <div class="h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-600">
-                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
-              </div>
-              Durabilidad Superior
-            </dt>
-            <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
-              <p class="flex-auto">
-                Nuestros productos están diseñados para durar. Utilizamos materiales de la más alta calidad y procesos de fabricación rigurosos.
-              </p>
-              <p class="mt-6">
-                <a href="#" class="text-sm font-semibold leading-6 text-indigo-400">Saber más <span aria-hidden="true">→</span></a>
-              </p>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </Layout>
