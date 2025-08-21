@@ -2,6 +2,8 @@
 // Importar estilos globales
 import "../styles/global.css";
 import Footer from "../components/ui/Footer/Footer.astro";
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import { ClientRouter } from 'astro:transitions';
 
 export interface Props {
   title?: string;
@@ -22,9 +24,9 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ClientRouter />
   </head>
-  <body class="bg-blend-darken bg-dark text-light">
-    <header></header>
+  <body class="bg-obscure text-graylight">
     <main>
       <slot />
     </main>

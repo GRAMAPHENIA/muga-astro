@@ -1,11 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import ModeloNegocioBentoGrid from "../components/BentoGrid/ModeloNegocioBentoGrid.astro";
 import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Layout from "../layouts/layout.astro";
+import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+
+const breadcrumbItems = [
+  {
+    label: "Modelo de Negocio",
+    href: "/modelo-negocio",
+    active: true,
+  },
+];
 ---
 
-<Layout title="Modelo de Negocio – Arquitectura Web de Nueva Generación">
+<Layout
+  title="Modelo de Negocio | MUGA"
+  description="Conoce nuestro modelo de negocio"
+>
   <Navigation />
+  <Breadcrumb items={breadcrumbItems} />
 
   <div class="py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">

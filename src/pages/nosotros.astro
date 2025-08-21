@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/layout.astro";
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+
+const breadcrumbItems = [
+  {
+    label: "Nosotros",
+    href: "/nosotros",
+    active: true,
+  },
+];
+---
+
+<Layout title="Nosotros | MUGA" description="Conoce más sobre MUGA, nuestra historia y valores">
+  <Navigation />
+  <Breadcrumb items={breadcrumbItems} />
+  <div >
+    <section class="py-12 sm:py-20">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Nosotros</h1>
+          <p class="mt-6 text-lg leading-8 text-gray-300">
+            Conoce más sobre MUGA, nuestra historia y los valores que nos definen.
+          </p>
+        </div>
+        
+        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <!-- Historia -->
+          <div class="flex flex-col bg-gray-800/50 p-8 rounded-2xl">
+            <h2 class="text-2xl font-bold text-white mb-4">Nuestra Historia</h2>
+            <p class="text-gray-300 mb-4">
+              MUGA nació en 2010 con la visión de crear productos innovadores que mejoraran la vida de las personas. Desde entonces, hemos crecido hasta convertirnos en líderes del sector.
+            </p>
+            <p class="text-gray-300 mb-4">
+              A lo largo de los años, hemos expandido nuestra gama de productos y servicios, siempre manteniendo nuestro compromiso con la calidad y la innovación.
+            </p>
+            <p class="text-gray-300">
+              Hoy, MUGA es reconocida internacionalmente por su excelencia y su capacidad para anticiparse a las necesidades del mercado.
+            </p>
+          </div>
+          
+          <!-- Valores -->
+          <div class="flex flex-col bg-gray-800/50 p-8 rounded-2xl">
+            <h2 class="text-2xl font-bold text-white mb-4">Nuestros Valores</h2>
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-600 flex items-center justify-center mr-3 mt-1">
+                  <svg class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="text-white">Innovación:</strong> Buscamos constantemente nuevas formas de mejorar nuestros productos y servicios.
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-600 flex items-center justify-center mr-3 mt-1">
+                  <svg class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="text-white">Calidad:</strong> No comprometemos la calidad. Cada producto que sale de nuestras instalaciones cumple con los más altos estándares.
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-600 flex items-center justify-center mr-3 mt-1">
+                  <svg class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="text-white">Sostenibilidad:</strong> Nos comprometemos a minimizar nuestro impacto ambiental y a contribuir a un futuro más sostenible.
+                </div>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-600 flex items-center justify-center mr-3 mt-1">
+                  <svg class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <strong class="text-white">Integridad:</strong> Actuamos con honestidad y transparencia en todas nuestras operaciones.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,35 @@
+---
+export interface Props {
+  items: {
+    label: string;
+    href: string;
+    active?: boolean;
+  }[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="px-6 lg:px-8 h-[40px] flex items-center m-0">
+  <ol class="flex items-center space-x-2 text-sm">
+    <li>
+      <a href="/" class="text-gray-400 hover:text-white">Inicio</a>
+    </li>
+    {
+      items.map((item, index) => (
+        <li class="flex items-center">
+          <span class="mx-2 text-gray-500">/</span>
+          <a
+            href={item.href}
+            class={`${
+              item.active ? "text-white font-medium" : "text-gray-400 hover:text-white"
+            }`}
+            aria-current={item.active ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</nav>

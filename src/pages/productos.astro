@@ -1,0 +1,27 @@
+---
+import Navigation from "../components/ui/Navigation/Navigation.astro";
+import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
+import Layout from "../layouts/layout.astro";
+
+const breadcrumbItems = [
+  {
+    label: "Productos",
+    href: "/productos",
+    active: true,
+  },
+];
+---
+
+<Layout
+  title="MUGA - Productos"
+  description="Descubre nuestra gama de productos de alta calidad"
+>
+  <Navigation />
+  <Breadcrumb items={breadcrumbItems} />
+  <div class="container mx-auto px-6 py-8">
+    <h1 class="text-4xl font-bold mb-8">Nuestros Productos</h1>
+    <p class="text-xl mb-12">
+      Página en construcción. Aquí se mostrarán todos nuestros productos.
+    </p>
+  </div>
+</Layout>
