@@ -1,4 +1,27 @@
 ---
+// Añadir interfaz de Props aunque no tenga propiedades
+export interface Props {}
+
+// Definir interfaz para elementos de navegación
+interface NavItem {
+  label: string;
+  href: string;
+  icon?: string;
+}
+
+// Usar la interfaz para definir los elementos de navegación
+const navItems: NavItem[] = [
+  { label: "Productos", href: "/productos" },
+  { label: "Características", href: "/caracteristicas" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Contacto", href: "/contacto" },
+];
+
+const portfolioItem: NavItem = {
+  label: "Portafolio",
+  href: "/portafolio",
+  icon: "briefcase"
+};
 
 // Obtener la ruta actual para resaltar el enlace activo
 const currentPath = Astro.url.pathname;

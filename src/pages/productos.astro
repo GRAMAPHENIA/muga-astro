@@ -3,8 +3,9 @@ import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
 import Layout from "../layouts/layout.astro";
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import type { BreadcrumbItem } from "../types";
 
-const breadcrumbItems = [
+const breadcrumbItems: BreadcrumbItem[] = [
   {
     label: "Productos",
     href: "/productos",
@@ -22,9 +23,9 @@ const breadcrumbItems = [
   <PageHeroSection 
     title="Nuestros Productos"
     description="Descubre nuestra gama de productos de alta calidad para tu hogar."
-    primaryButtonText="Ver catálogo"
-    primaryButtonLink="#"
     textAlign="left"
+    showBadge={true}
+    badgeText="Catálogo"
   />
   <div class="container mx-auto px-6 py-8">
     <p class="text-xl mb-12">
