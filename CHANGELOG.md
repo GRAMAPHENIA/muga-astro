@@ -19,7 +19,7 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 - Comportamiento inconsistente de la barra de navegación
 - Navegación móvil mejorada con JavaScript en lugar de :target
 
-## [0.0.1] - 2023-XX-XX
+## [0.0.1] - 2025-08-22
 
 ### Añadido
 - Versión inicial del sitio
