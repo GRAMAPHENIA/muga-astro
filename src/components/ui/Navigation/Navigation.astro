@@ -1,6 +1,8 @@
 ---
 // Añadir interfaz de Props aunque no tenga propiedades
-export interface Props {}
+export interface Props {
+  // Añadir slot para mobile-breadcrumb
+}
 
 // Definir interfaz para elementos de navegación
 interface NavItem {
@@ -37,6 +39,11 @@ const currentPath = Astro.url.pathname;
           <span class="sr-only">MUGA</span>
           <img src="/favicon.svg" alt="" class="h-8 w-8 border border-accent/50 hover:border-accent transition-all duration-500 rounded-full border-dashed" transition:animate="none" />
         </a>
+      </div>
+      
+      <!-- Mobile breadcrumb -->
+      <div class="flex lg:hidden ml-4">
+        <slot name="mobile-breadcrumb" />
       </div>
       
       <!-- Links desktop -->
@@ -113,7 +120,7 @@ const currentPath = Astro.url.pathname;
 <style>
   /* Añadir espacio para el header fijo */
   :global(body) {
-    padding-top: 72px; /* 72px (navbar) + 40px (breadcrumb) */
+    padding-top: 112px; /* 72px (navbar) + 40px (breadcrumb) */
   }
 
   /* Clase para el fondo al hacer scroll */
@@ -128,6 +135,20 @@ const currentPath = Astro.url.pathname;
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const closeMenuButton = document.getElementById('close-mobile-menu');
     const mobileMenu = document.getElementById('mobile-menu');
+    const breadcrumb = document.getElementById('breadcrumb');
+    
+    // Función para manejar el scroll
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        breadcrumb?.classList.add('bg-obscure');
+        breadcrumb?.classList.add('shadow-md');
+      } else {
+        breadcrumb?.classList.remove('shadow-md');
+      }
+    };
+    
+    // Agregar evento de scroll
+    window.addEventListener('scroll', handleScroll);
     
     mobileMenuButton?.addEventListener('click', () => {
       mobileMenu?.classList.remove('hidden');
@@ -169,3 +190,5 @@ const currentPath = Astro.url.pathname;
     }
   });
 </script>
+
+

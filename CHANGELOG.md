@@ -5,7 +5,17 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
-## [0.0.2] - 2023-XX-XX
+## [0.0.3] - 2025-08-23
+
+### Añadido
+- Implementación de BentoGrid personalizado en la página de características
+- Mejora de la experiencia de usuario en diferentes dispositivos
+
+### Cambiado
+- Aplicación del color de fondo bg-zinc-900/95 a todo el sitio
+- Visualización del breadcrumb solo en dispositivos desktop
+
+## [0.0.2] - 22-08-2025
 
 ### Añadido
 - Definiciones de tipos compartidos

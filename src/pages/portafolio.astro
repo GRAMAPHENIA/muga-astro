@@ -1,10 +1,11 @@
 ---
+import Layout from "../layouts/layout.astro";
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
-import Layout from "../layouts/layout.astro";
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import type { BreadcrumbItem } from "../types";
 
-const breadcrumbItems = [
+const breadcrumbItems: BreadcrumbItem[] = [
   {
     label: "Portafolio",
     href: "/portafolio",
@@ -13,122 +14,19 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout
-  title="Portafolio | MUGA"
-  description="Explora nuestros proyectos y casos de éxito"
->
-  <Navigation />
-  <Breadcrumb items={breadcrumbItems} />
+<Layout title="Portafolio | MUGA" description="Nuestro portafolio de proyectos">
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
   <PageHeroSection 
     title="Portafolio"
-    description="Descubre nuestros proyectos más destacados y casos de éxito."
+    description="Explora nuestros proyectos."
     textAlign="left"
+    showBadge={true}
+    badgeText="Proyectos"
   />
-  <div>
-    <div class="container mx-auto px-6 py-12">
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Proyecto 1 -->
-        <article
-          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 bg-accentxs"
-        >
-          <div class="absolute inset-0 -z-10 h-full w-full bg-transparent">
-          </div>
-          <div
-            class="absolute inset-0 -z-10 bg-gradient-to-t via-transparent from-accent/5 to-transparent"
-          >
-          </div>
-          <div
-            class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-accent/50"
-          >
-          </div>
-
-          <div
-            class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-accent"
-          >
-            <time datetime="2020-03-16" class="mr-8">Mar 16, 2020</time>
-            <div class="-ml-4 flex items-center gap-x-4">
-              <div class="flex gap-x-2.5">
-                <div class="h-6 w-6 flex-none rounded-full bg-obscure"></div>
-                Proyecto Alfa
-              </div>
-            </div>
-          </div>
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-muga-white">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Rediseño de marca global
-            </a>
-          </h3>
-        </article>
-
-        <!-- Proyecto 2 -->
-        <article
-          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 bg-accentxs"
-        >
-          <div class="absolute inset-0 -z-10 h-full w-full bg-transparent">
-          </div>
-          <div
-            class="absolute inset-0 -z-10 bg-gradient-to-t via-transparent from-accent/5 to-transparent"
-          >
-          </div>
-          <div
-            class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-accent/50"
-          >
-          </div>
-
-          <div
-            class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-accent"
-          >
-            <time datetime="2020-03-16" class="mr-8">Jul 12, 2021</time>
-            <div class="-ml-4 flex items-center gap-x-4">
-              <div class="flex gap-x-2.5">
-                <div class="h-6 w-6 flex-none rounded-full bg-obscure"></div>
-                Proyecto Beta
-              </div>
-            </div>
-          </div>
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-muga-white">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Plataforma de comercio electrónico
-            </a>
-          </h3>
-        </article>
-
-        <!-- Proyecto 3 -->
-        <article
-          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-80 sm:pt-48 lg:pt-80 bg-accentxs"
-        >
-          <div class="absolute inset-0 -z-10 h-full w-full bg-transparent">
-          </div>
-          <div
-            class="absolute inset-0 -z-10 bg-gradient-to-t via-transparent from-accent/5 to-transparent"
-          >
-          </div>
-          <div
-            class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-accent/50"
-          >
-          </div>
-
-          <div
-            class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-accent"
-          >
-            <time datetime="2020-03-16" class="mr-8">Dec 5, 2022</time>
-            <div class="-ml-4 flex items-center gap-x-4">
-              <div class="flex gap-x-2.5">
-                <div class="h-6 w-6 flex-none rounded-full bg-obscure"></div>
-                Proyecto Gamma
-              </div>
-            </div>
-          </div>
-          <h3 class="mt-3 text-lg font-semibold leading-6 text-muga-white">
-            <a href="#">
-              <span class="absolute inset-0"></span>
-              Aplicación móvil innovadora
-            </a>
-          </h3>
-        </article>
-      </div>
-    </div>
-  </div>
+  <!-- Resto del contenido -->
 </Layout>

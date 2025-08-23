@@ -18,8 +18,12 @@ const breadcrumbItems: BreadcrumbItem[] = [
   title="MUGA - Productos"
   description="Descubre nuestra gama de productos de alta calidad"
 >
-  <Navigation />
-  <Breadcrumb items={breadcrumbItems} />
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
   <PageHeroSection 
     title="Nuestros Productos"
     description="Descubre nuestra gama de productos de alta calidad para tu hogar."

@@ -1,11 +1,12 @@
 ---
 import ModeloNegocioBentoGrid from "../components/BentoGrid/ModeloNegocioBentoGrid.astro";
-import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Layout from "../layouts/layout.astro";
+import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import type { BreadcrumbItem } from "../types";
 
-const breadcrumbItems = [
+const breadcrumbItems: BreadcrumbItem[] = [
   {
     label: "Modelo de Negocio",
     href: "/modelo-negocio",
@@ -14,21 +15,21 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout
-  title="Modelo de Negocio | MUGA"
-  description="Conoce nuestro modelo de negocio"
->
-  <Navigation />
-  <Breadcrumb items={breadcrumbItems} />
+<Layout title="Modelo de Negocio | MUGA" description="Nuestro modelo de negocio">
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
   <PageHeroSection 
-    title="Arquitectura Web de Nueva Generación"
-    description="Nuestro enfoque: sitios web y aplicaciones modulares, rápidos y escalables, basados en un sistema de diseño propio. Transparencia, eficiencia y KPI medibles como estándar de calidad."
-    showBadge={true}
-    badgeText="Arquitectura Web"
-    badgeLink="#"
+    title="Modelo de Negocio"
+    description="Conoce nuestro modelo de negocio."
     textAlign="left"
+    showBadge={true}
+    badgeText="Modelo"
   />
-
+  <!-- Resto del contenido -->
   <ModeloNegocioBentoGrid />
 
   <div class="bg-muga-dark-800/50 rounded-xl p-6 flex flex-col">
@@ -39,14 +40,3 @@ const breadcrumbItems = [
     </p>
   </div>
 </Layout>
-
-<style>
-  .arrow-icon {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-
-  a:hover .arrow-icon {
-    transform: translateX(4px);
-  }
-</style>

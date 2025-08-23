@@ -1,0 +1,63 @@
+---
+import BentoCell from './BentoCell.astro';
+import '../../styles/bento.css';
+
+// Props tipadas con más opciones
+interface Props {
+  title?: string;
+  description?: string;
+  gap?: string; // Personalización del espaciado
+  cols?: string; // Personalización de columnas
+  children?: any; // Para permitir pasar celdas personalizadas
+}
+
+const { 
+  title, 
+  description, 
+  gap = "gap-4", 
+  cols = "grid-cols-1 md:grid-cols-4"
+} = Astro.props;
+---
+
+<section class="relative px-6 lg:px-8 py-12">
+  <div class="mx-auto max-w-7xl">
+    {title && <h2 class="text-3xl font-bold text-white mb-2">{title}</h2>}
+    {description && <p class="text-muga-neutral mb-8">{description}</p>}
+    
+    <div class={`grid ${cols} ${gap} auto-rows-[minmax(200px,auto)]`}>
+      <slot>
+        <!-- Contenido por defecto si no se pasan celdas personalizadas -->
+        <BentoCell title="Características" colSpan="col-span-1 md:col-span-2">
+          <ul class="space-y-2 text-muga-neutral">
+            <li class="flex items-start">
+              <span class="text-muga-primary mr-2">•</span>
+              <span>Diseño modular y escalable</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-muga-primary mr-2">•</span>
+              <span>Interactividad avanzada</span>
+            </li>
+          </ul>
+        </BentoCell>
+        
+        <BentoCell title="Tecnologías" colSpan="col-span-1 md:col-span-2">
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm">Astro</span>
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm">TypeScript</span>
+          </div>
+        </BentoCell>
+      </slot>
+    </div>
+  </div>
+</section>
+
+<style>
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  a:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+</style>

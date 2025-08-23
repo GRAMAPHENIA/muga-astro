@@ -3,8 +3,9 @@ import Layout from "../layouts/layout.astro";
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import type { BreadcrumbItem } from "../types";
 
-const breadcrumbItems = [
+const breadcrumbItems: BreadcrumbItem[] = [
   {
     label: "Contacto",
     href: "/contacto",
@@ -13,15 +14,19 @@ const breadcrumbItems = [
 ];
 ---
 
-<Layout title="Contacto | MUGA" description="Ponte en contacto con nosotros">
-  <Navigation />
-  <Breadcrumb items={breadcrumbItems} />
+<Layout title="Contacto | MUGA" description="Contáctanos">
+  <Navigation>
+    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+  </Navigation>
+  <div class="hidden lg:block">
+    <Breadcrumb items={breadcrumbItems} />
+  </div>
   <PageHeroSection 
     title="Contacto"
-    description="Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros."
+    description="Ponte en contacto con nosotros."
     textAlign="left"
     showBadge={true}
-    badgeText="Comunicación"
+    badgeText="Contacto"
   />
- 
+  <!-- Resto del contenido -->
 </Layout>
