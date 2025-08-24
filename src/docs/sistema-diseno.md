@@ -52,6 +52,44 @@ Nuestro lema interno: "Construir con método, entregar con valor".
 - Neutros: #D9D9D9, #302E2E, #2D1F1F
 - Blanco para contraste: #FFFFFF
 
+### Componentes avanzados:
+
+#### BentoCell
+
+El componente BentoCell es un elemento clave en nuestro sistema de diseño para crear layouts tipo "Bento Grid". Características principales:
+
+- **Estructura flexible**: Permite definir el tamaño mediante colSpan
+- **Personalización**: Admite fondos y bordes personalizados
+- **Efectos visuales**: Incluye opción para efecto de iluminación
+- **Integración con iconografía**: Soporta iconos SVG como imágenes de fondo o elementos internos
+
+**Uso con iconografía**:
+- Los iconos se almacenan en `/public/icons/` para optimizar el rendimiento
+- Se implementan como elementos `<img>` con clases para control de opacidad y z-index
+- Se posicionan con clases de Tailwind para centrado y dimensionamiento
+- Permiten superposición de contenido mediante control de capas (z-index)
+
+**Ejemplo de implementación**:
+```astro
+<BentoCell
+  title="Nombre de la sección"
+  colSpan="col-span-1 md:col-span-2"
+  bgClass="bg-transparent"
+  rounded={true}
+  lightEffect={true}
+>
+  <!-- Icono de fondo -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+    <img src="/icons/nombre-icono.svg" class="w-40 h-40 opacity-10" alt="Descripción del icono">
+  </div>
+  
+  <!-- Contenido principal -->
+  <div class="relative z-10">
+    <p class="text-muga-neutral py-10">Contenido de la sección</p>
+  </div>
+</BentoCell>
+```
+
 ## 4. Flujo de trabajo (pipeline de proyecto)
 
 1. **Diseño inicial**: wireframes y mockups en Figma, aprobación del cliente.

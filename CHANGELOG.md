@@ -5,6 +5,16 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
+## [0.0.4] - 2025-08-24
+
+### Añadido
+- Sistema de iconografía en carpeta public/icons para mejor rendimiento
+- Implementación de iconos SVG en las secciones de características
+
+### Mejorado
+- Optimización de la visualización de iconos con control de z-index
+- Mejora en el espaciado vertical de párrafos con clase py-10
+
 ## [0.0.3] - 2025-08-23
 
 ### Añadido

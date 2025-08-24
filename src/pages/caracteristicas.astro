@@ -16,21 +16,24 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 ---
 
-<Layout title="Características | MUGA" description="Características de nuestros productos">
+<Layout
+  title="Características | MUGA"
+  description="Características de nuestros productos"
+>
   <Navigation>
     <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
   </Navigation>
   <div class="hidden lg:block">
     <Breadcrumb items={breadcrumbItems} />
   </div>
-  <PageHeroSection 
+  <PageHeroSection
     title="Características"
     description="Conoce las características de nuestros productos."
     textAlign="left"
     showBadge={true}
     badgeText="Características"
   />
-  
+
   <section class="relative px-6 lg:px-8">
     <!-- Grid principal -->
     <div class="mx-auto max-w-7xl">
@@ -42,11 +45,22 @@ const breadcrumbItems: BreadcrumbItem[] = [
           title="Diseño Modular"
           colSpan="col-span-1 md:col-span-1"
           bgClass="bg-transparent"
-          borderClass="border-white/5"
           rounded={false}
           lightEffect={true}
         >
-          <ul class="space-y-2 text-muga-neutral">
+          <!-- Icono de componente -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <img
+              src="/icons/component.svg"
+              class="icon-svg w-40 h-40"
+              alt="Icono de componente"
+              data-icon="component"
+            />
+          </div>
+
+          <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
               <span class="text-muga-primary mr-2">•</span>
               <span>Componentes reutilizables</span>
@@ -70,7 +84,19 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <ul class="space-y-2 text-muga-neutral">
+          <!-- Icono de rendimiento -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <img
+              src="/icons/chart-no-axes-combined.svg"
+              class="icon-svg w-40 h-40"
+              alt="Icono de rendimiento"
+              data-icon="chart"
+            />
+          </div>
+
+          <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
               <span class="text-muga-primary mr-2">•</span>
               <span>Carga rápida</span>
@@ -94,11 +120,28 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <p class="text-muga-neutral">
-            En MUGA, nos enfocamos en crear productos y servicios que no solo se vean bien, sino que también funcionen de manera excepcional. Nuestro enfoque se centra en la transparencia, eficiencia y KPIs medibles como estándar de calidad.
+          <!-- Icono de objetivo -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <img
+              src="/icons/goal.svg"
+              class="icon-svg w-40 h-40"
+              alt="Icono de objetivo"
+              data-icon="goal"
+            />
+          </div>
+
+          <p class="text-muga-neutral relative z-10">
+            En MUGA, nos enfocamos en crear productos y servicios que no solo se
+            vean bien, sino que también funcionen de manera excepcional. Nuestro
+            enfoque se centra en la transparencia, eficiencia y KPIs medibles
+            como estándar de calidad.
           </p>
-          <p class="mt-4 text-muga-neutral">
-            Cada proyecto se construye con componentes reutilizables que garantizan consistencia visual y funcional, optimizando tanto la experiencia de desarrollo como el rendimiento final para el usuario.
+          <p class="mt-4 text-muga-neutral relative z-10">
+            Cada proyecto se construye con componentes reutilizables que
+            garantizan consistencia visual y funcional, optimizando tanto la
+            experiencia de desarrollo como el rendimiento final para el usuario.
           </p>
         </BentoCell>
 
@@ -111,7 +154,19 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <ul class="space-y-2 text-muga-neutral">
+          <!-- Icono de accesibilidad -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <img
+              src="/icons/keyboard.svg"
+              class="icon-svg w-40 h-40"
+              alt="Icono de teclado"
+              data-icon="keyboard"
+            />
+          </div>
+
+          <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
               <span class="text-muga-primary mr-2">•</span>
               <span>Estándares WCAG AA</span>
@@ -139,15 +194,40 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm">Astro</span>
-            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm">TailwindCSS</span>
-            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm">TypeScript</span>
-            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm">React</span>
-            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm">Hostinger</span>
+          <!-- Icono de tecnologías -->
+          <div
+            class="absolute inset-0 flex items-center justify-end pointer-events-none -z-10"
+          >
+            <img
+              src="/icons/cpu.svg"
+              class="icon-svg w-40 h-40 opacity-30"
+              alt="Icono de CPU"
+              data-icon="cpu"
+            />
           </div>
-          <p class="text-muga-neutral">
-            Utilizamos tecnologías modernas y eficientes para crear sitios web rápidos, seguros y escalables. Nuestro stack tecnológico está optimizado para ofrecer la mejor experiencia tanto para desarrolladores como para usuarios finales.
+
+          <div class="flex flex-wrap gap-2 mb-4 relative z-20">
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >Astro</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >TailwindCSS</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >TypeScript</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >React</span
+            >
+            <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
+              >Hostinger</span
+            >
+          </div>
+          <p class="text-muga-neutral relative z-20 mt-10">
+            Utilizamos tecnologías modernas y eficientes para crear sitios web
+            rápidos, seguros y escalables. Nuestro stack tecnológico está
+            optimizado para ofrecer la mejor experiencia tanto para
+            desarrolladores como para usuarios finales.
           </p>
         </BentoCell>
 
@@ -159,7 +239,28 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <ul class="space-y-2 text-muga-neutral">
+          <!-- Icono de SEO -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="icon-svg w-40 h-40"
+              fill="none"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-icon="seo"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+            </svg>
+          </div>
+
+          <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
               <span class="text-muga-primary mr-2">•</span>
               <span>Metadatos optimizados</span>
@@ -185,10 +286,17 @@ const breadcrumbItems: BreadcrumbItem[] = [
           lightEffect={true}
         >
           <p class="text-muga-neutral">
-            Todos nuestros productos están diseñados para funcionar perfectamente en cualquier dispositivo, desde teléfonos móviles hasta pantallas de escritorio. Utilizamos un enfoque mobile-first para garantizar una experiencia óptima en todos los tamaños de pantalla.
+            Todos nuestros productos están diseñados para funcionar
+            perfectamente en cualquier dispositivo, desde teléfonos móviles
+            hasta pantallas de escritorio. Utilizamos un enfoque mobile-first
+            para garantizar una experiencia óptima en todos los tamaños de
+            pantalla.
           </p>
           <p class="mt-4 text-muga-neutral">
-            Nuestro diseño responsive no solo se adapta visualmente, sino que también optimiza la interacción y la usabilidad para cada tipo de dispositivo, asegurando que todos los usuarios tengan la mejor experiencia posible.
+            Nuestro diseño responsive no solo se adapta visualmente, sino que
+            también optimiza la interacción y la usabilidad para cada tipo de
+            dispositivo, asegurando que todos los usuarios tengan la mejor
+            experiencia posible.
           </p>
         </BentoCell>
 
@@ -225,18 +333,9 @@ const breadcrumbItems: BreadcrumbItem[] = [
           lightEffect={true}
         >
           <div class="flex flex-col space-y-4">
-            <ArrowLink 
-              href="/contacto" 
-              text="Solicitar información" 
-            />
-            <ArrowLink 
-              href="/productos" 
-              text="Ver productos" 
-            />
-            <ArrowLink 
-              href="/portafolio" 
-              text="Ver portafolio" 
-            />
+            <ArrowLink href="/contacto" text="Solicitar información" />
+            <ArrowLink href="/productos" text="Ver productos" />
+            <ArrowLink href="/portafolio" text="Ver portafolio" />
           </div>
         </BentoCell>
       </div>
@@ -253,6 +352,65 @@ const breadcrumbItems: BreadcrumbItem[] = [
   a:hover .arrow-icon {
     transform: translateX(4px);
   }
+
+  /* Estilos para los SVG con efecto de iluminación */
+  .icon-svg {
+    stroke: #ff5353;
+    stroke-width: 1;
+    opacity: 0;
+    filter: blur(3px);
+    transition: filter 0.3s ease;
+  }
+
+  /* Cuando el cursor está sobre la celda, reducimos el blur para un efecto de enfoque */
+  .bento-cell:hover .icon-svg {
+    filter: blur(3px);
+  }
 </style>
 
+<script is:inline>
+  document.addEventListener("astro:page-load", function () {
+    // Seleccionar todos los iconos SVG
+    var icons = document.querySelectorAll(".icon-svg");
+    if (!icons.length) return;
+
+    // Para cada icono, aplicar el efecto de iluminación
+    icons.forEach(function (icon) {
+      var bentoCell = icon.closest(".bento-cell");
+      if (!bentoCell) return;
+
+      // Configurar el icono para que sea invisible inicialmente
+      icon.style.opacity = "0";
+
+      // Función para actualizar la máscara del icono
+      function updateMask(e) {
+        // Obtener las coordenadas del SVG para cálculos precisos
+        var svgRect = icon.getBoundingClientRect();
+
+        // Calcular la posición exacta del cursor relativa al SVG
+        var svgX = e.clientX - svgRect.left;
+        var svgY = e.clientY - svgRect.top;
+
+        // Aplicar la máscara con el centro exactamente en la posición del cursor
+        icon.style.opacity = "1";
+        var maskImage =
+          "radial-gradient(circle 50px at " +
+          svgX +
+          "px " +
+          svgY +
+          "px, black 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.2) 80%, transparent 100%)";
+        icon.style.webkitMaskImage = maskImage;
+        icon.style.maskImage = maskImage;
+      }
+
+      // Agregar eventos
+      bentoCell.addEventListener("mousemove", updateMask);
+
+      // Ocultar el icono cuando el cursor sale de la celda
+      bentoCell.addEventListener("mouseleave", function () {
+        icon.style.opacity = "0";
+      });
+    });
+  });
+</script>
 <script src="../scripts/bento-grid.ts"></script>
