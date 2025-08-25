@@ -5,6 +5,7 @@ import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
 import type { BreadcrumbItem } from "../types";
+import "../styles/bento.css";
 
 const breadcrumbItems: BreadcrumbItem[] = [
   {
@@ -15,14 +16,17 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 ---
 
-<Layout title="Modelo de Negocio | MUGA" description="Nuestro modelo de negocio">
+<Layout
+  title="Modelo de Negocio | MUGA"
+  description="Nuestro modelo de negocio"
+>
   <Navigation>
     <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
   </Navigation>
   <div class="hidden lg:block">
     <Breadcrumb items={breadcrumbItems} />
   </div>
-  <PageHeroSection 
+  <PageHeroSection
     title="Modelo de Negocio"
     description="Conoce nuestro modelo de negocio."
     textAlign="left"
@@ -40,3 +44,101 @@ const breadcrumbItems: BreadcrumbItem[] = [
     </p>
   </div>
 </Layout>
+
+<style>
+  /* Estilos para los SVG con efecto de iluminación */
+  .icon-svg {
+    stroke: #ff5353;
+    stroke-width: 1;
+    opacity: 0;
+    filter: blur(3px);
+    transition: filter 0.3s ease;
+  }
+
+  /* Cuando el cursor está sobre la celda, reducimos el blur para un efecto de enfoque */
+  .bento-cell:hover .icon-svg {
+    filter: blur(3px);
+  }
+
+  /* Estilos de bento.css */
+  /* Celda base */
+  .bento-cell {
+    position: relative;
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+  }
+
+  /* Efecto de luz dentro de cada celda */
+  .light-effect {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255, 83, 83, 0.5); /* accent/20 */
+    pointer-events: none;
+    filter: blur(100px);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Aseguramos que el contenido esté por encima del efecto de luz */
+  .bento-cell > *:not(.light-effect) {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Variables CSS para animaciones más fluidas */
+  :root {
+    --light-opacity: 0;
+    --light-x: 0px;
+    --light-y: 0px;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", function () {
+    // Seleccionar todos los iconos SVG
+    var icons = document.querySelectorAll(".icon-svg");
+    if (!icons.length) return;
+
+    // Para cada icono, aplicar el efecto de iluminación
+    icons.forEach(function (icon) {
+      var bentoCell = icon.closest(".bento-cell");
+      if (!bentoCell) return;
+
+      // Configurar el icono para que sea invisible inicialmente
+      icon.style.opacity = "0";
+
+      // Función para actualizar la máscara del icono
+      function updateMask(e) {
+        // Obtener las coordenadas del SVG para cálculos precisos
+        var svgRect = icon.getBoundingClientRect();
+
+        // Calcular la posición exacta del cursor relativa al SVG
+        var svgX = e.clientX - svgRect.left;
+        var svgY = e.clientY - svgRect.top;
+
+        // Aplicar la máscara con el centro exactamente en la posición del cursor
+        icon.style.opacity = "1";
+        var maskImage =
+          "radial-gradient(circle 50px at " +
+          svgX +
+          "px " +
+          svgY +
+          "px, black 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.2) 80%, transparent 100%)";
+        icon.style.webkitMaskImage = maskImage;
+        icon.style.maskImage = maskImage;
+      }
+
+      // Agregar eventos
+      bentoCell.addEventListener("mousemove", updateMask);
+
+      // Ocultar el icono cuando el cursor sale de la celda
+      bentoCell.addEventListener("mouseleave", function () {
+        icon.style.opacity = "0";
+      });
+    });
+  });
+</script>
+<script src="../scripts/bento-grid.ts"></script>

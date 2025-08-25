@@ -5,6 +5,16 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/),
 y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
+## [0.0.5] - 2025-08-25
+
+### Añadido
+- Iconos SVG con efecto blur en la sección de Modelo de Negocio
+- Implementación de iconos específicos para cada sección del BentoGrid
+
+### Mejorado
+- Optimización de la visibilidad de iconos al hacer hover
+- Consistencia visual en todas las secciones del Modelo de Negocio
+
 ## [0.0.4] - 2025-08-24
 
 ### Añadido
