@@ -243,21 +243,12 @@ const breadcrumbItems: BreadcrumbItem[] = [
           <div
             class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
+            <img
+              src="/icons/scan-search.svg"
               class="icon-svg w-40 h-40"
-              fill="none"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              alt="Icono de SEO"
               data-icon="seo"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-            </svg>
+            />
           </div>
 
           <ul class="space-y-2 text-muga-neutral relative z-10">
@@ -285,6 +276,18 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
+          <!-- Icono de Responsive -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <img
+              src="/icons/monitor-smartphone.svg"
+              class="icon-svg w-40 h-40"
+              alt="Icono de Responsive"
+              data-icon="responsive"
+            />
+          </div>
+          
           <p class="text-muga-neutral">
             Todos nuestros productos están diseñados para funcionar
             perfectamente en cualquier dispositivo, desde teléfonos móviles
@@ -308,18 +311,30 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <ul class="space-y-2 text-muga-neutral">
+          <!-- Icono de Mantenimiento -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <img
+              src="/icons/hard-hat.svg"
+              class="icon-svg w-40 h-40"
+              alt="Icono de Mantenimiento"
+              data-icon="maintenance"
+            />
+          </div>
+          
+          <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
               <span class="text-muga-primary mr-2">•</span>
               <span>Código limpio y documentado</span>
             </li>
             <li class="flex items-start">
               <span class="text-muga-primary mr-2">•</span>
-              <span>Actualizaciones sencillas</span>
+              <span>Actualizaciones periódicas</span>
             </li>
             <li class="flex items-start">
               <span class="text-muga-primary mr-2">•</span>
-              <span>Soporte continuo</span>
+              <span>Soporte técnico continuo</span>
             </li>
           </ul>
         </BentoCell>
@@ -332,7 +347,19 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <div class="flex flex-col space-y-4">
+          <!-- Icono de Contacto -->
+          <div
+            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+          >
+            <img
+              src="/icons/message-square-text.svg"
+              class="icon-svg w-40 h-40"
+              alt="Icono de Contacto"
+              data-icon="contact"
+            />
+          </div>
+          
+          <div class="flex flex-col space-y-4 relative z-10">
             <ArrowLink href="/contacto" text="Solicitar información" />
             <ArrowLink href="/productos" text="Ver productos" />
             <ArrowLink href="/portafolio" text="Ver portafolio" />
