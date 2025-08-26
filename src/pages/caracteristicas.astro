@@ -4,6 +4,7 @@ import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
 import BentoCell from "../components/ui/BentoCell.astro";
+import IconWithBlurEffect from "../components/ui/IconWithBlurEffect.astro";
 import ArrowLink from "../components/ui/Button/ArrowLink.astro";
 import type { BreadcrumbItem } from "../types";
 
@@ -48,17 +49,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de componente -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/component.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de componente"
-              data-icon="component"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/component.svg"
+            iconAlt="Icono de componente"
+            iconId="component"
+          />
 
           <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
@@ -84,17 +79,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de rendimiento -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/chart-no-axes-combined.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de rendimiento"
-              data-icon="chart"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/chart-no-axes-combined.svg"
+            iconAlt="Icono de rendimiento"
+            iconId="chart"
+          />
 
           <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
@@ -120,17 +109,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de objetivo -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/goal.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de objetivo"
-              data-icon="goal"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/goal.svg"
+            iconAlt="Icono de objetivo"
+            iconId="goal"
+          />
 
           <p class="text-muga-neutral relative z-10">
             En MUGA, nos enfocamos en crear productos y servicios que no solo se
@@ -154,17 +137,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de accesibilidad -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/keyboard.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de teclado"
-              data-icon="keyboard"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/keyboard.svg"
+            iconAlt="Icono de teclado"
+            iconId="keyboard"
+          />
 
           <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
@@ -194,17 +171,12 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de tecnologías -->
-          <div
-            class="absolute inset-0 flex items-center justify-end pointer-events-none -z-10"
-          >
-            <img
-              src="/icons/cpu.svg"
-              class="icon-svg w-40 h-40 opacity-30"
-              alt="Icono de CPU"
-              data-icon="cpu"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/cpu.svg"
+            iconAlt="Icono de CPU"
+            iconId="cpu"
+            iconSize="w-40 h-40 opacity-30"
+          />
 
           <div class="flex flex-wrap gap-2 mb-4 relative z-20">
             <span class="px-2 py-1 bg-accent/10 text-accent rounded text-sm"
@@ -239,17 +211,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de SEO -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/scan-search.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de SEO"
-              data-icon="seo"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/scan-search.svg"
+            iconAlt="Icono de SEO"
+            iconId="seo"
+          />
 
           <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
@@ -276,17 +242,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de Responsive -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/monitor-smartphone.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de Responsive"
-              data-icon="responsive"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/monitor-smartphone.svg"
+            iconAlt="Icono de Responsive"
+            iconId="responsive"
+          />
           
           <p class="text-muga-neutral">
             Todos nuestros productos están diseñados para funcionar
@@ -311,17 +271,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de Mantenimiento -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/hard-hat.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de Mantenimiento"
-              data-icon="maintenance"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/hard-hat.svg"
+            iconAlt="Icono de Mantenimiento"
+            iconId="maintenance"
+          />
           
           <ul class="space-y-2 text-muga-neutral relative z-10">
             <li class="flex items-start">
@@ -347,17 +301,11 @@ const breadcrumbItems: BreadcrumbItem[] = [
           rounded={false}
           lightEffect={true}
         >
-          <!-- Icono de Contacto -->
-          <div
-            class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-          >
-            <img
-              src="/icons/message-square-text.svg"
-              class="icon-svg w-40 h-40"
-              alt="Icono de Contacto"
-              data-icon="contact"
-            />
-          </div>
+          <IconWithBlurEffect 
+            iconPath="/icons/message-square-text.svg"
+            iconAlt="Icono de Contacto"
+            iconId="contact"
+          />
           
           <div class="flex flex-col space-y-4 relative z-10">
             <ArrowLink href="/contacto" text="Solicitar información" />
@@ -379,65 +327,6 @@ const breadcrumbItems: BreadcrumbItem[] = [
   a:hover .arrow-icon {
     transform: translateX(4px);
   }
-
-  /* Estilos para los SVG con efecto de iluminación */
-  .icon-svg {
-    stroke: #ff5353;
-    stroke-width: 1;
-    opacity: 0;
-    filter: blur(3px);
-    transition: filter 0.3s ease;
-  }
-
-  /* Cuando el cursor está sobre la celda, reducimos el blur para un efecto de enfoque */
-  .bento-cell:hover .icon-svg {
-    filter: blur(3px);
-  }
 </style>
 
-<script is:inline>
-  document.addEventListener("astro:page-load", function () {
-    // Seleccionar todos los iconos SVG
-    var icons = document.querySelectorAll(".icon-svg");
-    if (!icons.length) return;
-
-    // Para cada icono, aplicar el efecto de iluminación
-    icons.forEach(function (icon) {
-      var bentoCell = icon.closest(".bento-cell");
-      if (!bentoCell) return;
-
-      // Configurar el icono para que sea invisible inicialmente
-      icon.style.opacity = "0";
-
-      // Función para actualizar la máscara del icono
-      function updateMask(e) {
-        // Obtener las coordenadas del SVG para cálculos precisos
-        var svgRect = icon.getBoundingClientRect();
-
-        // Calcular la posición exacta del cursor relativa al SVG
-        var svgX = e.clientX - svgRect.left;
-        var svgY = e.clientY - svgRect.top;
-
-        // Aplicar la máscara con el centro exactamente en la posición del cursor
-        icon.style.opacity = "1";
-        var maskImage =
-          "radial-gradient(circle 50px at " +
-          svgX +
-          "px " +
-          svgY +
-          "px, black 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.2) 80%, transparent 100%)";
-        icon.style.webkitMaskImage = maskImage;
-        icon.style.maskImage = maskImage;
-      }
-
-      // Agregar eventos
-      bentoCell.addEventListener("mousemove", updateMask);
-
-      // Ocultar el icono cuando el cursor sale de la celda
-      bentoCell.addEventListener("mouseleave", function () {
-        icon.style.opacity = "0";
-      });
-    });
-  });
-</script>
 <script src="../scripts/bento-grid.ts"></script>

@@ -1,5 +1,6 @@
 ---
 import BentoCell from "../ui/BentoCell.astro";
+import IconWithBlurEffect from "../ui/IconWithBlurEffect.astro";
 import ArrowLink from "../ui/Button/ArrowLink.astro";
 ---
 
@@ -18,16 +19,11 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Stack Tecnológico -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/layers.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de Stack Tecnológico"
-          />
-        </div>
+        <IconWithBlurEffect 
+          iconPath="/icons/layers.svg"
+          iconAlt="Icono de Stack Tecnológico"
+          iconId="stack"
+        />
 
         <ul class="space-y-2 text-muga-neutral relative z-10">
           <li class="flex items-start">
@@ -65,16 +61,11 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Cliente Ideal -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/shield-user.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de Cliente Ideal"
-          />
-        </div>
+        <IconWithBlurEffect 
+          iconPath="/icons/shield-user.svg"
+          iconAlt="Icono de Cliente Ideal"
+          iconId="cliente"
+        />
 
         <ul class="space-y-2 text-muga-neutral relative z-10">
           <li class="flex items-start">
@@ -100,16 +91,11 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Nuestro Enfoque -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/drafting-compass.svg"
-            class="icon-svg w-40 h-40 "
-            alt="Icono de Nuestro Enfoque"
-          />
-        </div>
+        <IconWithBlurEffect 
+          iconPath="/icons/drafting-compass.svg"
+          iconAlt="Icono de Nuestro Enfoque"
+          iconId="enfoque"
+        />
 
         <div class="relative z-10">
           <p class="text-muga-neutral">
@@ -135,16 +121,11 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Checklist Transparente -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/list-checks.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de Checklist Transparente"
-          />
-        </div>
+        <IconWithBlurEffect 
+          iconPath="/icons/list-checks.svg"
+          iconAlt="Icono de Checklist Transparente"
+          iconId="checklist"
+        />
 
         <ul class="space-y-2 text-muga-neutral relative z-10">
           <li class="flex items-start">
@@ -167,60 +148,41 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
       </BentoCell>
 
       <BentoCell
-        title="KPI de Contrato"
+        title="Métricas de Calidad"
         colSpan="col-span-1 md:col-span-2"
         bgClass="bg-transparent"
         borderClass="border-white/5"
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de KPI de Contrato -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/file-archive.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de KPI de Contrato"
-          />
-        </div>
-        
-        <div class="overflow-x-auto">
-          <table class="w-full table-auto border-collapse">
+        <div class="relative z-10">
+          <table class="w-full text-sm">
             <thead>
-              <tr class="text-left border-b border-white/20">
-                <th class="pb-2 pr-4 text-white text-sm">Métrica (KPI)</th>
-                <th class="pb-2 pr-4 text-white text-sm">Definición</th>
-                <th class="pb-2 text-white text-sm">Meta mínima</th>
+              <tr class="border-b border-white/10">
+                <th class="py-2 text-left text-muga-neutral">Métrica</th>
+                <th class="py-2 text-left text-muga-neutral">Descripción</th>
+                <th class="py-2 text-left text-muga-neutral">Objetivo</th>
               </tr>
             </thead>
             <tbody>
               <tr class="border-b border-white/10">
-                <td class="py-2 pr-4 text-muga-neutral">Performance (LCP)</td>
-                <td class="py-2 pr-4 text-muga-neutral"
-                  >Largest Contentful Paint</td
-                >
+                <td class="py-2 pr-4 text-muga-neutral">Velocidad (LCP)</td>
+                <td class="py-2 pr-4 text-muga-neutral">Largest Contentful Paint</td>
                 <td class="py-2 font-semibold text-muga-primary">≤ 2.5s</td>
               </tr>
               <tr class="border-b border-white/10">
                 <td class="py-2 pr-4 text-muga-neutral">Estabilidad (CLS)</td>
-                <td class="py-2 pr-4 text-muga-neutral"
-                  >Cumulative Layout Shift</td
-                >
+                <td class="py-2 pr-4 text-muga-neutral">Cumulative Layout Shift</td>
                 <td class="py-2 font-semibold text-muga-primary">≤ 0.1</td>
               </tr>
               <tr class="border-b border-white/10">
-                <td class="py-2 pr-4 text-muga-neutral">Interactividad (INP)</td
-                >
-                <td class="py-2 pr-4 text-muga-neutral"
-                  >Interaction to Next Paint</td
-                >
+                <td class="py-2 pr-4 text-muga-neutral">Interactividad (INP)</td>
+                <td class="py-2 pr-4 text-muga-neutral">Interaction to Next Paint</td>
                 <td class="py-2 font-semibold text-muga-primary">≤ 200ms</td>
               </tr>
               <tr class="border-b border-white/10">
                 <td class="py-2 pr-4 text-muga-neutral">Accesibilidad</td>
-                <td class="py-2 pr-4 text-muga-neutral">Lighthouse / WCAG AA</td
-                >
+                <td class="py-2 pr-4 text-muga-neutral">Lighthouse / WCAG AA</td>
                 <td class="py-2 font-semibold text-muga-primary">≥ 90/100</td>
               </tr>
               <tr>
@@ -241,16 +203,11 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Beneficios -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/badge-check.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de Beneficios"
-          />
-        </div>
+        <IconWithBlurEffect 
+          iconPath="/icons/badge-check.svg"
+          iconAlt="Icono de Beneficios"
+          iconId="beneficios"
+        />
         
         <ul class="space-y-2 text-muga-neutral">
           <li class="flex items-start">
@@ -278,19 +235,13 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         colSpan="col-span-1 md:col-span-2"
         bgClass="bg-transparent"
         borderClass="border-white/5"
-        rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Filosofía de Trabajo -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/brain-cog.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de Filosofía de Trabajo"
-          />
-        </div>
+        <IconWithBlurEffect 
+          iconPath="/icons/brain-cog.svg"
+          iconAlt="Icono de Filosofía de Trabajo"
+          iconId="filosofia"
+        />
         
         <p class="text-muga-neutral">
           Nuestro modelo de negocio se basa en la transparencia y el compromiso
@@ -312,29 +263,28 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Tecnologías Adicionales -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/package-plus.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de Tecnologías Adicionales"
-          />
-        </div>
-        
-        <ul class="space-y-2 text-muga-neutral">
+        <IconWithBlurEffect 
+          iconPath="/icons/package-plus.svg"
+          iconAlt="Icono de Tecnologías Adicionales"
+          iconId="tecnologias"
+        />
+
+        <ul class="space-y-2 text-muga-neutral relative z-10">
           <li class="flex items-start">
             <span class="text-muga-primary mr-2">•</span>
-            <span>React para componentes interactivos</span>
+            <span>React: componentes interactivos</span>
           </li>
           <li class="flex items-start">
             <span class="text-muga-primary mr-2">•</span>
-            <span>Optimización de imágenes</span>
+            <span>Strapi: CMS headless</span>
           </li>
           <li class="flex items-start">
             <span class="text-muga-primary mr-2">•</span>
-            <span>Integración con CMS headless</span>
+            <span>Supabase: base de datos</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-muga-primary mr-2">•</span>
+            <span>Cloudflare: CDN global</span>
           </li>
         </ul>
       </BentoCell>
@@ -347,24 +297,15 @@ import ArrowLink from "../ui/Button/ArrowLink.astro";
         rounded={false}
         lightEffect={true}
       >
-        <!-- Icono de Contacto -->
-        <div
-          class="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
-        >
-          <img
-            src="/icons/message-square-text.svg"
-            class="icon-svg w-40 h-40"
-            alt="Icono de Contacto"
-          />
-        </div>
+        <IconWithBlurEffect 
+          iconPath="/icons/message-square-text.svg"
+          iconAlt="Icono de Contacto"
+          iconId="contacto"
+        />
         
         <div class="flex flex-col space-y-4 relative z-10">
           <ArrowLink 
-            href="#" 
-            text="Solicitar propuesta" 
-          />
-          <ArrowLink 
-            href="#" 
+            href="/contacto" 
             text="Agendar llamada" 
           />
           <ArrowLink 
