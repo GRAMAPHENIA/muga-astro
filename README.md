@@ -1,2 +1,2 @@
-# Muga Astro
-## プロジェクトの概要
+Muga Astro
+## プロジェクトの概
