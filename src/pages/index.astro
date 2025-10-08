@@ -1,14 +1,16 @@
 ---
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
-import BentoGrid from "../components/BentoGrid/BentoGrid.astro";
+import IconWithBlurEffect from "../components/ui/IconWithBlurEffect.astro";
+import ArrowLink from "../components/ui/Button/ArrowLink.astro";
 
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Layout from "../layouts/layout.astro";
+import "../styles/bento.css";
 ---
 
 <Layout
-  title="MUGA - Inicio"
-  description="MUGA es una marca de productos de alta calidad para tu hogar"
+  title="MUGA - Arquitectura Web de Nueva Generación"
+  description="Desarrollo de sitios web modulares, rápidos y eficientes. Arquitectura web de nueva generación con KPIs medibles garantizados."
 >
   <Navigation />
   <PageHeroSection
@@ -22,4 +24,251 @@ import Layout from "../layouts/layout.astro";
     secondaryButtonText="Saber más"
     secondaryButtonLink="#"
   />
+
+  <!-- Sección de Características Principales -->
+  <section class="relative px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-7xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl mb-4">
+          ¿Por qué elegirnos?
+        </h2>
+        <p class="text-lg text-muga-neutral max-w-2xl mx-auto">
+          Soluciones web modernas con rendimiento garantizado
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Velocidad -->
+        <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-6 text-center">
+          <IconWithBlurEffect
+            iconPath="/icons/chart-no-axes-combined.svg"
+            iconAlt="Icono de velocidad"
+            iconId="speed"
+          />
+          <h3 class="text-xl font-semibold text-white mb-3">Velocidad Ultra Rápida</h3>
+          <p class="text-muga-neutral">Sitios que cargan en menos de 2.5 segundos con Core Web Vitals optimizados.</p>
+        </div>
+
+        <!-- Diseño Moderno -->
+        <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-6 text-center">
+          <IconWithBlurEffect
+            iconPath="/icons/component.svg"
+            iconAlt="Icono de diseño"
+            iconId="design"
+          />
+          <h3 class="text-xl font-semibold text-white mb-3">Diseño Modular</h3>
+          <p class="text-muga-neutral">Componentes reutilizables que garantizan consistencia y escalabilidad.</p>
+        </div>
+
+        <!-- Garantías -->
+        <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-6 text-center">
+          <IconWithBlurEffect
+            iconPath="/icons/shield-user.svg"
+            iconAlt="Icono de garantías"
+            iconId="guarantee"
+          />
+          <h3 class="text-xl font-semibold text-white mb-3">KPIs Garantizados</h3>
+          <p class="text-muga-neutral">Métricas medibles de rendimiento, accesibilidad y SEO en cada proyecto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Productos -->
+  <section class="relative px-6 lg:px-8 py-16 bg-muga-dark-800/30">
+    <div class="mx-auto max-w-7xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl mb-4">
+          Nuestros Productos
+        </h2>
+        <p class="text-lg text-muga-neutral max-w-2xl mx-auto">
+          Soluciones web listas para usar
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Producto 1: Landing Page -->
+        <div class="flex flex-col items-center bg-muga-dark-800/70 border border-white/10 px-6 py-6 rounded-xl">
+          <img src="/products/edge.webp" alt="Landing Page Moderna" class="w-full h-48 object-cover mb-4 border border-white/10 rounded-lg" />
+          <h3 class="text-xl font-semibold text-white mb-2 tracking-tight">Landing Page Moderna</h3>
+          <p class="mb-6 text-center text-graylight">Página de aterrizaje optimizada para conversiones.</p>
+          <div class="w-full flex justify-center mt-auto">
+            <a href="https://mugaland.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 text-accent border border-accent hover:bg-accent hover:text-obscure transition font-medium uppercase mb-2">Ver demo <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <!-- Producto 2: Corporativo Astro -->
+        <div class="flex flex-col items-center bg-muga-dark-800/70 border border-white/10 px-6 py-6 rounded-xl">
+          <img src="/products/spark.webp" alt="Sitio Corporativo" class="w-full h-48 object-cover mb-4 border border-white/10 rounded-lg" />
+          <h3 class="text-xl font-semibold text-white mb-2 tracking-tight">Sitio Corporativo</h3>
+          <p class="mb-6 text-center text-graylight">Sitio web profesional para empresas.</p>
+          <div class="w-full flex justify-center mt-auto">
+            <a href="https://corporativo-astro.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 text-accent border border-accent hover:bg-accent hover:text-obscure transition font-medium uppercase mb-2">Ver demo <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <ArrowLink href="/productos" text="Ver todos los productos" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección CTA con Formulario -->
+  <section class="relative px-6 lg:px-8 py-16">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl mb-4">
+          ¿Listo para comenzar tu proyecto?
+        </h2>
+        <p class="text-lg text-muga-neutral max-w-2xl mx-auto mb-8">
+          Cuéntanos sobre tu idea y te ayudamos a hacerla realidad con las mejores tecnologías
+        </p>
+      </div>
+
+      <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-8">
+        <!-- Mensajes de estado del formulario -->
+        <div id="form-messages" class="mb-6 hidden">
+          <div id="success-message" class="hidden bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-3 rounded-md">
+            ¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.
+          </div>
+          <div id="error-message" class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-md">
+            Error al enviar el mensaje. Por favor, intenta de nuevo.
+          </div>
+        </div>
+
+        <form id="contact-form" method="POST" action="https://formspree.io/f/mnngbqnb" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-white mb-2">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-white mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="project" class="block text-sm font-medium text-white mb-2">Tipo de proyecto</label>
+            <select
+              id="project"
+              name="project"
+              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              required
+            >
+              <option value="">Selecciona una opción</option>
+              <option value="landing">Landing Page</option>
+              <option value="corporativo">Sitio Corporativo</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="personalizado">Proyecto Personalizado</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-white mb-2">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              placeholder="Cuéntanos sobre tu proyecto..."
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-obscure font-semibold rounded-md hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obscure transition disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <span id="btn-text">Enviar consulta</span>
+              <span id="btn-arrow" aria-hidden="true">→</span>
+              <div id="btn-spinner" class="hidden animate-spin rounded-full h-4 w-4 border-b-2 border-obscure" aria-hidden="true"></div>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<script src="../scripts/bento-grid.ts"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const btnText = document.getElementById('btn-text') as HTMLSpanElement;
+    const btnArrow = document.getElementById('btn-arrow') as HTMLSpanElement;
+    const btnSpinner = document.getElementById('btn-spinner') as HTMLDivElement;
+    const formMessages = document.getElementById('form-messages') as HTMLDivElement;
+    const successMessage = document.getElementById('success-message') as HTMLDivElement;
+    const errorMessage = document.getElementById('error-message') as HTMLDivElement;
+
+    if (!form || !submitBtn || !btnText || !btnArrow || !btnSpinner || !formMessages || !successMessage || !errorMessage) {
+      console.error('No se encontraron todos los elementos del formulario');
+      return;
+    }
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Mostrar loading state
+      submitBtn.disabled = true;
+      btnText.textContent = 'Enviando...';
+      btnArrow.classList.add('hidden');
+      btnSpinner.classList.remove('hidden');
+
+      // Ocultar mensajes anteriores
+      formMessages.classList.add('hidden');
+      successMessage.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Éxito
+          formMessages.classList.remove('hidden');
+          successMessage.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error('Error en el envío');
+        }
+      } catch (error) {
+        // Error
+        formMessages.classList.remove('hidden');
+        errorMessage.classList.remove('hidden');
+      } finally {
+        // Restaurar estado del botón
+        submitBtn.disabled = false;
+        btnText.textContent = 'Enviar consulta';
+        btnArrow.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+      }
+    });
+  });
+</script>
