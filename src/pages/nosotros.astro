@@ -14,20 +14,78 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 ---
 
-<Layout title="Nosotros | MUGA" description="Conoce más sobre nosotros">
+<Layout title="Nosotros | MUGA" description="Arquitectura web de nueva generación">
   <Navigation>
     <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
   </Navigation>
   <div class="hidden lg:block">
     <Breadcrumb items={breadcrumbItems} />
   </div>
-  <PageHeroSection 
-    title="Nosotros"
-    description="Conoce más sobre nuestro equipo y nuestra historia."
-    textAlign="left"
+  <PageHeroSection
+    title="AWNG"
+    description="Arquitectura Web de Nueva Generación"
+    textAlign="center"
     showBadge={true}
-    badgeText="Equipo"
+    badgeText="MUGA"
   />
-  
-  <!-- Resto del contenido -->
+
+  <section class="relative px-6 lg:px-8 py-24">
+    <div class="mx-auto max-w-4xl text-center">
+      <div class="space-y-12">
+        <!-- Stack -->
+        <div>
+          <h3 class="text-sm font-mono text-accent uppercase tracking-wider mb-4">Stack</h3>
+          <p class="text-2xl font-light text-white">
+            Astro + TailwindCSS + TypeScript
+          </p>
+          <p class="text-muga-neutral mt-2">
+            Hostinger
+          </p>
+        </div>
+
+        <!-- KPI -->
+        <div>
+          <h3 class="text-sm font-mono text-accent uppercase tracking-wider mb-4">KPI Garantizados</h3>
+          <div class="grid grid-cols-3 gap-6 text-center">
+            <div>
+              <p class="text-white font-medium mb-2">Performance</p>
+              <ul class="text-muga-neutral space-y-1 font-mono text-sm">
+                <li>LCP ≤2.5s</li>
+                <li>CLS ≤0.1</li>
+                <li>INP ≤200ms</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-white font-medium mb-2">Accesibilidad</p>
+              <ul class="text-muga-neutral space-y-1 font-mono text-sm">
+                <li>WCAG AA ≥90</li>
+                <li>SEO ≥95%</li>
+                <li>Indexación</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-white font-medium mb-2">Fiabilidad</p>
+              <ul class="text-muga-neutral space-y-1 font-mono text-sm">
+                <li>HTTPS</li>
+                <li>Headers seguros</li>
+                <li>Uptime ≥99.9%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filosofía -->
+        <div>
+          <h3 class="text-sm font-mono text-accent uppercase tracking-wider mb-4">Filosofía</h3>
+          <p class="text-xl font-light text-white">
+            Construir con método,<br>
+            entregar con valor.
+          </p>
+          <p class="text-muga-neutral mt-4 text-sm">
+            Transparencia total • Reportes automáticos • Mantenimiento continuo
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

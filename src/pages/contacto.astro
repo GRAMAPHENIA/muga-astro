@@ -3,6 +3,7 @@ import Layout from "../layouts/layout.astro";
 import Navigation from "../components/ui/Navigation/Navigation.astro";
 import Breadcrumb from "../components/ui/Breadcrumb/Breadcrumb.astro";
 import PageHeroSection from "../components/HeroSection/PageHeroSection.astro";
+import ArrowLink from "../components/ui/Button/ArrowLink.astro";
 import type { BreadcrumbItem } from "../types";
 
 const breadcrumbItems: BreadcrumbItem[] = [
@@ -14,19 +15,217 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ];
 ---
 
-<Layout title="Contacto | MUGA" description="Contáctanos">
+<Layout title="Contacto | MUGA" description="Inicia tu proyecto con KPI garantizados">
   <Navigation>
     <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
   </Navigation>
   <div class="hidden lg:block">
     <Breadcrumb items={breadcrumbItems} />
   </div>
-  <PageHeroSection 
-    title="Contacto"
-    description="Ponte en contacto con nosotros."
-    textAlign="left"
+  <PageHeroSection
+    title="Iniciar Proyecto"
+    description="Cuéntanos tu idea. Construimos con método y entregamos con valor."
+    textAlign="center"
     showBadge={true}
-    badgeText="Contacto"
+    badgeText="AWNG"
   />
-  <!-- Resto del contenido -->
+
+  <section class="relative px-6 lg:px-8 py-24">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center mb-16">
+        <h2 class="text-2xl font-light text-white mb-4">Proceso</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="w-12 h-12 bg-accent/10 border border-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-accent font-mono font-bold">01</span>
+            </div>
+            <h3 class="text-white font-medium mb-2">Consulta</h3>
+            <p class="text-muga-neutral text-sm">Evaluamos tu proyecto y requerimientos</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 bg-accent/10 border border-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-accent font-mono font-bold">02</span>
+            </div>
+            <h3 class="text-white font-medium mb-2">Propuesta</h3>
+            <p class="text-muga-neutral text-sm">KPI garantizados y roadmap técnico</p>
+          </div>
+          <div>
+            <div class="w-12 h-12 bg-accent/10 border border-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-accent font-mono font-bold">03</span>
+            </div>
+            <h3 class="text-white font-medium mb-2">Entrega</h3>
+            <p class="text-muga-neutral text-sm">Monitoreo continuo y reportes transparentes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de contacto -->
+      <div class="bg-muga-dark-800/50 border border-white/5 p-8">
+        <!-- Mensajes de estado del formulario -->
+        <div id="form-messages" class="mb-6 hidden">
+          <div id="success-message" class="hidden bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-3">
+            ¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.
+          </div>
+          <div id="error-message" class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3">
+            Error al enviar el mensaje. Por favor, intenta de nuevo.
+          </div>
+        </div>
+
+        <form id="contact-form" method="POST" action="https://formspree.io/f/mnngbqnb" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-white mb-2">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-white mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="project" class="block text-sm font-medium text-white mb-2">Tipo de proyecto</label>
+            <select
+              id="project"
+              name="project"
+              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              required
+            >
+              <option value="">Selecciona una opción</option>
+              <option value="landing">Landing Page</option>
+              <option value="corporativo">Sitio Corporativo</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="personalizado">Proyecto Personalizado</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium text-white mb-2">Mensaje</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              placeholder="Cuéntanos sobre tu proyecto..."
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-obscure font-semibold hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obscure transition disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <span id="btn-text">Enviar consulta</span>
+              <span id="btn-arrow" aria-hidden="true">→</span>
+              <div id="btn-spinner" class="hidden animate-spin rounded-full h-4 w-4 border-b-2 border-obscure" aria-hidden="true"></div>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-muga-neutral mb-4">O explora nuestros productos</p>
+        <div class="flex justify-center gap-6">
+          <ArrowLink href="/productos" text="Productos" />
+          <ArrowLink href="/portafolio" text="Portafolio" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form') as HTMLFormElement;
+      const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+      const btnText = document.getElementById('btn-text') as HTMLSpanElement;
+      const btnArrow = document.getElementById('btn-arrow') as HTMLSpanElement;
+      const btnSpinner = document.getElementById('btn-spinner') as HTMLDivElement;
+      const formMessages = document.getElementById('form-messages') as HTMLDivElement;
+      const successMessage = document.getElementById('success-message') as HTMLDivElement;
+      const errorMessage = document.getElementById('error-message') as HTMLDivElement;
+
+      if (!form || !submitBtn || !btnText || !btnArrow || !btnSpinner || !formMessages || !successMessage || !errorMessage) {
+        console.error('No se encontraron todos los elementos del formulario');
+        return;
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Mostrar loading state
+        submitBtn.disabled = true;
+        btnText.textContent = 'Enviando...';
+        btnArrow.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+
+        // Ocultar mensajes anteriores
+        formMessages.classList.add('hidden');
+        successMessage.classList.add('hidden');
+        errorMessage.classList.add('hidden');
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            // Éxito
+            formMessages.classList.remove('hidden');
+            successMessage.classList.remove('hidden');
+            form.reset();
+          } else {
+            throw new Error('Error en el envío');
+          }
+        } catch (error) {
+          // Error
+          formMessages.classList.remove('hidden');
+          errorMessage.classList.remove('hidden');
+        } finally {
+          // Restaurar estado del botón
+          submitBtn.disabled = false;
+          btnText.textContent = 'Enviar consulta';
+          btnArrow.classList.remove('hidden');
+          btnSpinner.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+
+  <style>
+    /* Estilos para el select */
+    select {
+      background-color: rgba(24, 23, 23, 0.7) !important;
+      color: #A0A0A0 !important;
+    }
+
+    select:focus {
+      color: white !important;
+    }
+
+    select option {
+      background-color: #191717 !important;
+      color: white !important;
+    }
+  </style>
+
 </Layout>

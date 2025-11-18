@@ -39,7 +39,7 @@ import "../styles/bento.css";
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Velocidad -->
-        <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-6 text-center">
+        <div class="bg-muga-dark-800/50 border border-white/5 p-6 text-center">
           <IconWithBlurEffect
             iconPath="/icons/chart-no-axes-combined.svg"
             iconAlt="Icono de velocidad"
@@ -50,7 +50,7 @@ import "../styles/bento.css";
         </div>
 
         <!-- Diseño Moderno -->
-        <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-6 text-center">
+        <div class="bg-muga-dark-800/50 border border-white/5 p-6 text-center">
           <IconWithBlurEffect
             iconPath="/icons/component.svg"
             iconAlt="Icono de diseño"
@@ -61,7 +61,7 @@ import "../styles/bento.css";
         </div>
 
         <!-- Garantías -->
-        <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-6 text-center">
+        <div class="bg-muga-dark-800/50 border border-white/5 p-6 text-center">
           <IconWithBlurEffect
             iconPath="/icons/shield-user.svg"
             iconAlt="Icono de garantías"
@@ -88,8 +88,8 @@ import "../styles/bento.css";
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Producto 1: Landing Page -->
-        <div class="flex flex-col items-center bg-muga-dark-800/70 border border-white/10 px-6 py-6 rounded-xl">
-          <img src="/products/edge.webp" alt="Landing Page Moderna" class="w-full h-48 object-cover mb-4 border border-white/10 rounded-lg" />
+        <div class="flex flex-col items-center bg-muga-dark-800/70 border border-white/10 px-6 py-6">
+          <img src="/products/edge.webp" alt="Landing Page Moderna" class="w-full h-48 object-cover mb-4 border border-white/10" />
           <h3 class="text-xl font-semibold text-white mb-2 tracking-tight">Landing Page Moderna</h3>
           <p class="mb-6 text-center text-graylight">Página de aterrizaje optimizada para conversiones.</p>
           <div class="w-full flex justify-center mt-auto">
@@ -98,8 +98,8 @@ import "../styles/bento.css";
         </div>
 
         <!-- Producto 2: Corporativo Astro -->
-        <div class="flex flex-col items-center bg-muga-dark-800/70 border border-white/10 px-6 py-6 rounded-xl">
-          <img src="/products/spark.webp" alt="Sitio Corporativo" class="w-full h-48 object-cover mb-4 border border-white/10 rounded-lg" />
+        <div class="flex flex-col items-center bg-muga-dark-800/70 border border-white/10 px-6 py-6">
+          <img src="/products/spark.webp" alt="Sitio Corporativo" class="w-full h-48 object-cover mb-4 border border-white/10" />
           <h3 class="text-xl font-semibold text-white mb-2 tracking-tight">Sitio Corporativo</h3>
           <p class="mb-6 text-center text-graylight">Sitio web profesional para empresas.</p>
           <div class="w-full flex justify-center mt-auto">
@@ -126,13 +126,13 @@ import "../styles/bento.css";
         </p>
       </div>
 
-      <div class="bg-muga-dark-800/50 border border-white/5 rounded-xl p-8">
+      <div class="bg-muga-dark-800/50 border border-white/5 p-8">
         <!-- Mensajes de estado del formulario -->
         <div id="form-messages" class="mb-6 hidden">
-          <div id="success-message" class="hidden bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-3 rounded-md">
+          <div id="success-message" class="hidden bg-green-500/10 border border-green-500/20 text-green-400 px-4 py-3">
             ¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.
           </div>
-          <div id="error-message" class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-md">
+          <div id="error-message" class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3">
             Error al enviar el mensaje. Por favor, intenta de nuevo.
           </div>
         </div>
@@ -145,7 +145,7 @@ import "../styles/bento.css";
                 type="text"
                 id="name"
                 name="name"
-                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 placeholder="Tu nombre"
                 required
               />
@@ -156,7 +156,7 @@ import "../styles/bento.css";
                 type="email"
                 id="email"
                 name="email"
-                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+                class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
                 placeholder="tu@email.com"
                 required
               />
@@ -168,7 +168,7 @@ import "../styles/bento.css";
             <select
               id="project"
               name="project"
-              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
               required
             >
               <option value="">Selecciona una opción</option>
@@ -185,7 +185,7 @@ import "../styles/bento.css";
               id="message"
               name="message"
               rows="4"
-              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 rounded-md text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              class="w-full px-3 py-2 bg-muga-dark-800/70 border border-white/10 text-white placeholder-graylight focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
               placeholder="Cuéntanos sobre tu proyecto..."
             ></textarea>
           </div>
@@ -194,7 +194,7 @@ import "../styles/bento.css";
             <button
               type="submit"
               id="submit-btn"
-              class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-obscure font-semibold rounded-md hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obscure transition disabled:opacity-50 disabled:cursor-not-allowed"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-obscure font-semibold hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-obscure transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span id="btn-text">Enviar consulta</span>
               <span id="btn-arrow" aria-hidden="true">→</span>
@@ -272,3 +272,21 @@ import "../styles/bento.css";
     });
   });
 </script>
+
+<style>
+  /* Estilos para el select */
+  select {
+    background-color: rgba(24, 23, 23, 0.7) !important;
+    color: #A0A0A0 !important;
+  }
+
+  select:focus {
+    color: white !important;
+  }
+
+  select option {
+    background-color: #191717 !important;
+    color: white !important;
+  }
+</style>
+
