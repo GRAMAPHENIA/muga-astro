@@ -21,7 +21,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
   description="Nuestro modelo de negocio"
 >
   <Navigation>
-    <Breadcrumb items={breadcrumbItems} slot="mobile-breadcrumb" />
+    <Breadcrumb items={breadcrumbItems} />
   </Navigation>
   <div class="hidden lg:block">
     <Breadcrumb items={breadcrumbItems} />
@@ -36,7 +36,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
   <!-- Resto del contenido -->
   <ModeloNegocioBentoGrid />
 
-  <div class="bg-muga-dark-800/50 rounded-xl p-6 flex flex-col">
+  <div class="bg-muga-dark-800/50 p-6 flex flex-col">
     <p class="text-muga-neutral mt-8 text-center text-sm max-w-2xl mx-auto">
       Este documento refleja nuestra filosofía de transparencia y compromiso
       técnico. La versión interna contiene detalles adicionales de pricing,

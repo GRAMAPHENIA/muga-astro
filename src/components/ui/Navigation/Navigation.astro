@@ -37,7 +37,7 @@ const currentPath = Astro.url.pathname;
       <div class="flex items-center justify-start" transition:animate="none">
         <a href="/" transition:animate="none">
           <span class="sr-only">MUGA</span>
-          <img src="/favicon.svg" alt="" class="h-8 w-8 border border-accent/50 hover:border-accent transition-all duration-500 rounded-full border-dashed" transition:animate="none" />
+          <img src="/logo/logo.png" alt="" class="h-8 w-8 border border-accent/50 hover:border-accent transition-all duration-500 border-dashed" transition:animate="none" />
         </a>
       </div>
       
@@ -83,7 +83,7 @@ const currentPath = Astro.url.pathname;
       <div class="flex items-center justify-between">
         <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">MUGA</span>
-          <img src="/favicon.svg" alt="" class="h-8 w-auto" />
+          <img src="/logo/logo.png" alt="" class="h-8 w-auto" />
         </a>
         <button id="close-mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
           <span class="sr-only">Close menu</span>
@@ -131,64 +131,54 @@ const currentPath = Astro.url.pathname;
 </style>
 
 <script is:inline define:vars={{ currentPath }}>
-  document.addEventListener('astro:page-load', () => {
+  // Función para inicializar el comportamiento del navbar
+  const initNavbarBehavior = () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const closeMenuButton = document.getElementById('close-mobile-menu');
     const mobileMenu = document.getElementById('mobile-menu');
-    const breadcrumb = document.getElementById('breadcrumb');
-    
-    // Función para manejar el scroll
+
+    // Función para manejar el scroll del breadcrumb (solo si existe)
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        breadcrumb?.classList.add('bg-obscure');
-        breadcrumb?.classList.add('shadow-md');
-      } else {
-        breadcrumb?.classList.remove('shadow-md');
+      const breadcrumb = document.getElementById('breadcrumb');
+      if (breadcrumb) {
+        if (window.scrollY > 10) {
+          breadcrumb.classList.add('bg-obscure');
+          breadcrumb.classList.add('shadow-md');
+        } else {
+          breadcrumb.classList.remove('bg-obscure');
+          breadcrumb.classList.remove('shadow-md');
+        }
       }
     };
-    
+
+    // Verificar estado inicial
+    handleScroll();
+
     // Agregar evento de scroll
     window.addEventListener('scroll', handleScroll);
-    
+
+    // Event listeners del menú móvil
     mobileMenuButton?.addEventListener('click', () => {
       mobileMenu?.classList.remove('hidden');
     });
-    
+
     closeMenuButton?.addEventListener('click', () => {
       mobileMenu?.classList.add('hidden');
     });
-    
+
     const mobileLinks = mobileMenu?.querySelectorAll('a');
     mobileLinks?.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu?.classList.add('hidden');
       });
     });
-  });
+  };
 
-  // Para la carga inicial
-  document.addEventListener('DOMContentLoaded', () => {
-    if (!document.querySelector('html').hasAttribute('data-astro-transition')) {
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const closeMenuButton = document.getElementById('close-mobile-menu');
-      const mobileMenu = document.getElementById('mobile-menu');
-      
-      mobileMenuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.remove('hidden');
-      });
-      
-      closeMenuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-      });
-      
-      const mobileLinks = mobileMenu?.querySelectorAll('a');
-      mobileLinks?.forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu?.classList.add('hidden');
-        });
-      });
-    }
-  });
+  // Ejecutar en carga de página de Astro
+  document.addEventListener('astro:page-load', initNavbarBehavior);
+
+  // Ejecutar en carga inicial del DOM
+  document.addEventListener('DOMContentLoaded', initNavbarBehavior);
 </script>
 
 
