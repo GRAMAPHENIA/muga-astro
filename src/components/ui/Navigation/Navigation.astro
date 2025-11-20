@@ -141,12 +141,10 @@ const currentPath = Astro.url.pathname;
     const handleScroll = () => {
       const breadcrumb = document.getElementById('breadcrumb');
       if (breadcrumb) {
-        if (window.scrollY > 10) {
-          breadcrumb.classList.add('bg-obscure');
-          breadcrumb.classList.add('shadow-md');
+        if (window.scrollY > 0) {
+          breadcrumb.classList.add('scrolled');
         } else {
-          breadcrumb.classList.remove('bg-obscure');
-          breadcrumb.classList.remove('shadow-md');
+          breadcrumb.classList.remove('scrolled');
         }
       }
     };

@@ -64,22 +64,3 @@ const { items } = Astro.props;
   }
 </style>
 
-<script>
-  // Solo aplicar efectos de scroll en desktop
-  if (window.innerWidth >= 768) {
-    const breadcrumb = document.getElementById('breadcrumb');
-    
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        breadcrumb?.classList.add('scrolled');
-      } else {
-        breadcrumb?.classList.remove('scrolled');
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    
-    // Verificar el estado inicial
-    handleScroll();
-  }
-</script>
