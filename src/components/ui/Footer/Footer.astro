@@ -4,7 +4,7 @@ import ArrowLink from "../Button/ArrowLink.astro";
 export interface Props {}
 ---
 
-<footer class="bg-muga-dark-800/50 py-8 mt-16">
+<footer class="bg-muga-dark-800/50 mt-12">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="flex justify-center">
       <ArrowLink
@@ -13,20 +13,20 @@ export interface Props {}
         textColor="text-accent hover:text-blue-500"
       />
     </div>
-    <div class="mt-4 text-center text-sm text-muga-neutral">
+    <p class="text-xs text-muga-neutral font-light text-center">
+      Parte de MUGA — estudio digital independiente.
+    </p>
+    <div class="text-center text-sm text-muga-neutral my-10">
       <p>
         <span class="font-mono">{new Date().getFullYear()}</span>
         <span class="font-medium text-accent">MUGA</span>.
       </p>
-      <p class="mt-2 text-xs text-muga-neutral font-light">
-        Parte de MUGA — estudio digital independiente.
-      </p>
-      <p class="mt-1 text-sm text-muga-neutral">
+      <p class="text-sm text-muga-neutral">
         ¿Buscás diseño o motion? <a
           href="https://muga.studio"
           class="text-accent hover:text-blue-500 transition-colors">MUGA STUDIO</a>
       </p>
-      <p class="mt-1 text-xs text-graylight font-mono">Versión 1.0.0</p>
+      <p class="text-xs text-graylight font-mono">Versión 1.0.0</p>
     </div>
   </div>
 </footer>
